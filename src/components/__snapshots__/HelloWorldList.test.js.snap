@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class HelloWorldList extends _react.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            greetings: ['Jim', 'Sally', 'Bender'] };
+
+        this.addGreeting = this.
+        addGreeting.
+        bind(this);
+        this.removeGreeting = this.
+        removeGreeting.
+        bind(this);
+    }
+    renderGreetings() {
+        return this.
+        state.
+        greetings.
+        map(name => _react2.default.createElement(_HelloWorld2.default, { key: name, name: name, removeGreeting: this.removeGreeting, __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this }));
+    }
+    addGreeting(newName) {
+        this.setState({
+            greetings: [
+            newName, ...this.state.greetings] });
+
+
+    }
+    removeGreeting(removeName) {
+        this.setState({
+            greetings: this.
+            state.
+            greetings.
+            filter(name => name !== removeName) });
+
+    }
+    render() {
+        return (
+            _react2.default.createElement('div', { className: 'HelloWorldList', __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this },
+                _react2.default.createElement(_AddGreeter2.default, { addGreeting: this.addGreeting, __source: { fileName: _jsxFileName, lineNumber: 43 }, __self: this }), ' ', this.renderGreetings()));
+
+
+    }} renders and matches our snapshot 1`] = `
+<div
+  className="HelloWorldList"
+>
+  <div
+    className="AddGreeter"
+  >
+    <input
+      className="form-control"
+      id={undefined}
+      onChange={[Function]}
+      placeholder="Enter a name"
+      type="text"
+      value=""
+    />
+    <br />
+    <button
+      className="btn btn-success"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Add
+    </button>
+  </div>
+   
+  <div
+    className="HelloWorld"
+  >
+    Hello
+     
+    Jim
+    !
+    <button
+      className="pull-right delete btn btn-xs btn-danger"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+    <button
+      className="pull-right french btn btn-xs btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Frenchify!
+    </button>
+  </div>
+  <div
+    className="HelloWorld"
+  >
+    Hello
+     
+    Sally
+    !
+    <button
+      className="pull-right delete btn btn-xs btn-danger"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+    <button
+      className="pull-right french btn btn-xs btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Frenchify!
+    </button>
+  </div>
+  <div
+    className="HelloWorld"
+  >
+    Hello
+     
+    Bender
+    !
+    <button
+      className="pull-right delete btn btn-xs btn-danger"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+    <button
+      className="pull-right french btn btn-xs btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Frenchify!
+    </button>
+  </div>
+</div>
+`;

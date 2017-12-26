@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class AddGreeter extends _react.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            greetingName: '' };
+
+        this.handleUpdate = this.
+        handleUpdate.
+        bind(this);
+        this.addGreeting = this.
+        addGreeting.
+        bind(this);
+    }
+    handleUpdate(e) {
+        this.setState({ greetingName: e.target.value });
+    }
+    addGreeting() {
+        this.
+        props.
+        addGreeting(this.state.greetingName);
+        this.setState({ greetingName: '' });
+    }
+    render() {
+        return (
+            _react2.default.createElement('div', { className: 'AddGreeter', __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this },
+                _react2.default.createElement(_reactBootstrap.FormControl, {
+                    type: 'text',
+                    placeholder: 'Enter a name',
+                    value: this.state.greetingName,
+                    onChange: this.handleUpdate, __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this }), _react2.default.createElement('br', { __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }),
+                _react2.default.createElement(_reactBootstrap.Button, { onClick: this.addGreeting, bsStyle: 'success', __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: this }, 'Add')));
+
+
+    }} renders and matches our snapshot 1`] = `
+<div
+  className="AddGreeter"
+>
+  <input
+    className="form-control"
+    id={undefined}
+    onChange={[Function]}
+    placeholder="Enter a name"
+    type="text"
+    value=""
+  />
+  <br />
+  <button
+    className="btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Add
+  </button>
+</div>
+`;

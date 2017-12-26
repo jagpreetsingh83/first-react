@@ -30,12 +30,12 @@ class HelloWorld extends Component {
                     onClick={this.deleteGreeting}
                     bsStyle="danger"
                     bsSize="xsmall"
-                    className="pull-right">Delete</Button>
+                    className="pull-right delete">Delete</Button>
                 <Button
                     onClick={this.frenchify}
                     bsStyle="primary"
                     bsSize="xsmall"
-                    className="pull-right">Frenchify!</Button>
+                    className="pull-right french">Frenchify!</Button>
             </div>
         );
     }
