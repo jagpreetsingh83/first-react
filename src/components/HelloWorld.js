@@ -6,7 +6,8 @@ class HelloWorld extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            greeting: 'Hello'
+            greeting: 'Hello',
+            translation: 'Frenchify!'
         }
         this.frenchify = this
             .frenchify
@@ -16,7 +17,11 @@ class HelloWorld extends Component {
             .bind(this);
     }
     frenchify() {
-        this.setState({greeting: 'Bonjour'});
+        if (this.state.greeting === 'Hello') {
+            this.setState({greeting: 'Bonjour', translation: 'Englishify!'});
+        } else {
+            this.setState({greeting: 'Hello', translation: 'Frenchify!'});
+        }
     }
     deleteGreeting(e) {
         this
@@ -35,7 +40,7 @@ class HelloWorld extends Component {
                     onClick={this.frenchify}
                     bsStyle="primary"
                     bsSize="xsmall"
-                    className="pull-right french">Frenchify!</Button>
+                    className="pull-right french">{this.state.translation}</Button>
             </div>
         );
     }

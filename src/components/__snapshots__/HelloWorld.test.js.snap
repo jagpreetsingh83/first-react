@@ -4,7 +4,8 @@ exports[`class HelloWorld extends _react.Component {
     constructor(props) {
         super(props);
         this.state = {
-            greeting: 'Hello' };
+            greeting: 'Hello',
+            translation: 'Frenchify!' };
 
         this.frenchify = this.
         frenchify.
@@ -14,7 +15,11 @@ exports[`class HelloWorld extends _react.Component {
         bind(this);
     }
     frenchify() {
-        this.setState({ greeting: 'Bonjour' });
+        if (this.state.greeting === 'Hello') {
+            this.setState({ greeting: 'Bonjour', translation: 'Englishify!' });
+        } else {
+            this.setState({ greeting: 'Hello', translation: 'Frenchify!' });
+        }
     }
     deleteGreeting(e) {
         this.
@@ -23,17 +28,17 @@ exports[`class HelloWorld extends _react.Component {
     }
     render() {
         return (
-            _react2.default.createElement('div', { className: 'HelloWorld', __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this }, this.state.greeting, ' ', this.props.name, '!',
+            _react2.default.createElement('div', { className: 'HelloWorld', __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this }, this.state.greeting, ' ', this.props.name, '!',
                 _react2.default.createElement(_reactBootstrap.Button, {
                         onClick: this.deleteGreeting,
                         bsStyle: 'danger',
                         bsSize: 'xsmall',
-                        className: 'pull-right delete', __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this }, 'Delete'),
+                        className: 'pull-right delete', __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }, 'Delete'),
                 _react2.default.createElement(_reactBootstrap.Button, {
                         onClick: this.frenchify,
                         bsStyle: 'primary',
                         bsSize: 'xsmall',
-                        className: 'pull-right french', __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }, 'Frenchify!')));
+                        className: 'pull-right french', __source: { fileName: _jsxFileName, lineNumber: 39 }, __self: this }, this.state.translation)));
 
 
     }} renders and matches our snapshot 1`] = `
