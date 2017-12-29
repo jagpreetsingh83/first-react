@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Switch from 'react-router-dom/Switch';
 import Route from 'react-router-dom/Route';
 
 const PlayerAPI = {
@@ -42,19 +41,31 @@ const PlayerAPI = {
     }
 }
 
-const FullRoster = () => (
-    <div>
-        <ul>
-            {PlayerAPI
-                .all()
-                .map(p => (
-                    <li key={p.number}>
-                        <Link to={`/roster/${p.number}`}>{p.name}</Link>
-                    </li>
-                ))}
-        </ul>
-    </div>
-)
+const Empty = () => {
+    return <i/>;
+}
+
+const FullRoster = (props) => {
+    return (
+        <div>
+            <ul>
+                {PlayerAPI
+                    .all()
+                    .map(p => (
+                        <li key={p.number}>
+                            <Link to={`/roster/${p.number}`}>{p.name}</Link>
+                            <Route
+                                exact
+                                path="/roster/:pid"
+                                component={parseInt(props.location.pathname.slice(-1), 10) === p.number
+                                ? Player
+                                : Empty}/>
+                        </li>
+                    ))}
+            </ul>
+        </div>
+    )
+}
 
 const Player = (props) => {
     const player = PlayerAPI.get(parseInt(props.match.params.pid, 10));
@@ -78,10 +89,7 @@ const Roster = () => {
             backgroundColor: "yellow",
             height: "100%"
         }}>
-            <Switch>
-                <Route exact path='/roster' component={FullRoster}/>
-                <Route path='/roster/:pid' component={Player}/>
-            </Switch>
+            <Route path='/roster' component={FullRoster}/>
         </div>
     );
 };
